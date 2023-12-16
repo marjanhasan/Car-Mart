@@ -47,8 +47,8 @@ class UserLoginView(LoginView):
 @login_required
 def profile(request):
     current_user = request.user
-    # owner_instance = get_object_or_404(Owner, owner=current_user)
-    return render(request, "profile.html", {"data": current_user})
+    owner_instance = get_object_or_404(Owner, owner=current_user)
+    return render(request, "profile.html", {"data": owner_instance})
 
 
 @login_required
